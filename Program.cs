@@ -7,6 +7,9 @@ namespace dates
     {
         public static void Main(string[] args)
         {
+            // starting time
+            DateTime start = DateTime.Now;
+
             // first create Locations list
             List<Location> Locations = new List<Location>(){
                 // Add locations
@@ -64,6 +67,17 @@ namespace dates
                 // display event at console
                 Console.WriteLine($"{e.TimeStamp}, {e.Location.Name}");
             }
+
+            // ending time
+            DateTime end = DateTime.Now;
+            TimeSpan diff = end.Subtract(start);
+
+            // display difference between start & end time
+            Console.WriteLine($"Days: {diff.Days}");
+            Console.WriteLine($"Hours: {diff.Hours}");
+            Console.WriteLine($"Minutes: {diff.Minutes}");
+            Console.WriteLine($"Seconds: {diff.Seconds}");
+            Console.WriteLine($"Milliseconds: {diff.Milliseconds}");
         }
     }
 
